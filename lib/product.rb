@@ -1,4 +1,4 @@
-`
+
 class Product
   attr_accessor :category, :name, :unit_price, :quantity
   def initialize(category, name, unit_price, quantity)
