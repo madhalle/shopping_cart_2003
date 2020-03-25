@@ -61,7 +61,7 @@ class ShoppingCart
       #require "pry"; binding.pry
       by_quantity_low_to_high << product.quantity
     end
-    by_quantity_low_to_high.sort.each do |quantity|
+    by_quantity_low_to_high.sort.reverse.each do |quantity|
       @products.each do |product|
         if product.quantity.to_i == quantity
           sorted << product
@@ -71,13 +71,13 @@ class ShoppingCart
     sorted.uniq
   end
 
-  def product_breakdown
-
-    @products.each_with_object({}) do |(category, type), category|
-      #require "pry"; binding.pry
-      (category[type[:meat]] ||= []) << product
-      (category[type[:paper]] ||= []) << product
-      (category[type[:produce]] ||= []) << product
-    end
-  end
+  # def product_breakdown
+  #
+  #   @products.each_with_object({}) do |(category, type), category|
+  #     #require "pry"; binding.pry
+  #     (category[type[:meat]] ||= []) << product
+  #     (category[type[:paper]] ||= []) << product
+  #     (category[type[:produce]] ||= []) << product
+  #   end
+  # end
 end
